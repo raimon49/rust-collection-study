@@ -2,7 +2,7 @@ fn main() {
     {
         let mut _numbers: Vec<i32> = vec![];
         let words = vec!["step", "on", "no", "pets"];
-        let mut _buffer = vec![0u8; 1024];
+        let buffer = vec![0u8; 1024];
 
         // 他のコレクションからベクタに変換
         use std::collections::HashSet;
@@ -12,5 +12,7 @@ fn main() {
         let _converted_my_vec = my_set.into_iter().collect::<Vec<String>>();
 
         let _second_word = words[1];
+        let _my_ref = &buffer[4..12];
+        let _my_copy = buffer[4..12].to_vec();
     }
 }
