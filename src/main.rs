@@ -14,5 +14,9 @@ fn main() {
         let _second_word = words[1];
         let _my_ref = &buffer[4..12];
         let _my_copy = buffer[4..12].to_vec();
+
+        if let Some(item) = words.first() {
+            println!("We got one! {}", item);
+        }
     }
 }
