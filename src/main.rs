@@ -18,5 +18,9 @@ fn main() {
         if let Some(item) = words.first() {
             println!("We got one! {}", item);
         }
+
+        if let Some(item) = words.last() {
+            println!("We got one! {}", item);
+        }
     }
 }
