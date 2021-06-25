@@ -22,5 +22,8 @@ fn main() {
         if let Some(item) = words.last() {
             println!("We got one! {}", item);
         }
+
+        assert_eq!(words.get(2), Some(&"no"));
+        assert_eq!(words.get(4), None);
     }
 }
