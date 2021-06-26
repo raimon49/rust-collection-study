@@ -25,5 +25,14 @@ fn main() {
 
         assert_eq!(words.get(2), Some(&"no"));
         assert_eq!(words.get(4), None);
+
+        let mut slice = [0, 1, 2, 3];
+        {
+            let last = slice.last_mut().unwrap(); // &mut i32型として取得
+            assert_eq!(*last, 3);
+            // 参照を書き換える
+            *last = 100;
+            assert_eq!(slice, [0, 1, 2, 100]);
+        }
     }
 }
