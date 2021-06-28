@@ -41,5 +41,8 @@ fn main() {
                    vec![1, 2, 3, 4, 5, 6, 7, 8, 9]);
         assert_eq!(v[0..6].to_vec(),
                    vec![1, 2, 3, 4, 5, 6]);
+
+        assert_eq!(v.len(), 9);
+        assert!(!v[0..1].is_empty());
     }
 }
