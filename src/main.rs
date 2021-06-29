@@ -44,5 +44,8 @@ fn main() {
 
         assert_eq!(v.len(), 9);
         assert!(!v[0..1].is_empty());
+
+        // Vec::with_capacity()で確保したバッファより大きくはならないためvec.capacity() >= vec.len() は常に成り立つ
+        assert!(v.to_vec().capacity() >= v.to_vec().len());
     }
 }
