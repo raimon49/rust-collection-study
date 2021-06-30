@@ -47,5 +47,10 @@ fn main() {
 
         // Vec::with_capacity()で確保したバッファより大きくはならないためvec.capacity() >= vec.len() は常に成り立つ
         assert!(v.to_vec().capacity() >= v.to_vec().len());
+
+        let mut two_vec = vec!["a", "b"];
+        assert_eq!(two_vec.pop(), Some("b"));
+        assert_eq!(two_vec.pop(), Some("a"));
+        assert_eq!(two_vec.pop(), None);
     }
 }
