@@ -52,5 +52,12 @@ fn main() {
         assert_eq!(two_vec.pop(), Some("b"));
         assert_eq!(two_vec.pop(), Some("a"));
         assert_eq!(two_vec.pop(), None);
+
+        two_vec.push("1");
+        two_vec.push("2");
+        two_vec.push("3");
+        assert_eq!(two_vec.len(), 3);
+        two_vec.truncate(2); // index 2..以降を全てドロップ
+        assert_eq!(two_vec.len(), 2);
     }
 }
