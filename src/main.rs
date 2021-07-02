@@ -59,5 +59,9 @@ fn main() {
         assert_eq!(two_vec.len(), 3);
         two_vec.truncate(2); // index 2..以降を全てドロップ
         assert_eq!(two_vec.len(), 2);
+
+        let mut byte_vec = b"Misssssssissssippi".to_vec();
+        byte_vec.dedup();
+        assert_eq!(&byte_vec, b"Misisipi");
     }
 }
