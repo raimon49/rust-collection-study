@@ -60,8 +60,8 @@ fn main() {
         two_vec.truncate(2); // index 2..以降を全てドロップ
         assert_eq!(two_vec.len(), 2);
 
-        let mut byte_vec = b"Misssssssissssippi".to_vec(); // 連続している「s」をドロップ
-        byte_vec.dedup();
+        let mut byte_vec = b"Misssssssissssippi".to_vec();
+        byte_vec.dedup(); // 連続している「s」をドロップ
         assert_eq!(&byte_vec, b"Misisipi");
     }
 }
