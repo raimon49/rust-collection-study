@@ -63,5 +63,10 @@ fn main() {
         let mut byte_vec = b"Misssssssissssippi".to_vec();
         byte_vec.dedup(); // 連続している「s」をドロップ
         assert_eq!(&byte_vec, b"Misisipi");
+
+        byte_vec = b"Misssssssissssippi".to_vec();
+        let mut seen = HashSet::new();
+        byte_vec.retain(|r| seen.insert(*r)); // HashSetに入れて「s」の重複を完全に排除する
+        assert_eq!(&byte_vec, b"Misp");
     }
 }
