@@ -68,5 +68,8 @@ fn main() {
         let mut seen = HashSet::new();
         byte_vec.retain(|r| seen.insert(*r)); // HashSetに入れて「s」の重複を完全に排除する
         assert_eq!(&byte_vec, b"Misp");
+
+        // すべてのスライスをつなげた新しいベクタを返す
+        assert_eq!([[1, 2], [3, 4], [5, 6]].concat(), vec![1, 2, 3, 4, 5, 6]);
     }
 }
