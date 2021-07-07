@@ -73,5 +73,9 @@ fn main() {
         assert_eq!([[1, 2], [3, 4], [5, 6]].concat(), vec![1, 2, 3, 4, 5, 6]);
         // スライスとスライスを連結する間にseparatorのコピーを挟む
         assert_eq!([[1, 2], [3, 4], [5, 6]].join(&0), vec![1, 2, 0, 3, 4, 0, 5, 6]);
+
+        let mut nums = [4, 2, 3, 1];
+        nums.sort();
+        assert_eq!(nums.to_vec(), vec![1, 2, 3, 4]);
     }
 }
