@@ -77,5 +77,7 @@ fn main() {
         let mut nums = [4, 2, 3, 1];
         nums.sort();
         assert_eq!(nums.to_vec(), vec![1, 2, 3, 4]);
+        nums.reverse();
+        assert_eq!(nums.to_vec(), vec![4, 3, 2, 1]);
     }
 }
