@@ -79,5 +79,8 @@ fn main() {
         assert_eq!(nums.to_vec(), vec![1, 2, 3, 4]);
         nums.reverse();
         assert_eq!(nums.to_vec(), vec![4, 3, 2, 1]);
+
+        let contain = "As a Service".contains(&"M");
+        assert_eq!(contain, false);
     }
 }
