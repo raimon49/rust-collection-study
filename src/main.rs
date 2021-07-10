@@ -85,5 +85,8 @@ fn main() {
 
         assert_eq!([1, 2, 3, 4].starts_with(&[1, 2]), true);
         assert_eq!([1, 2, 3, 4].starts_with(&[2, 3]), false);
+
+        assert_eq!([1, 2, 3, 4].ends_with(&[3, 4]), true);
+        assert_eq!([1, 2, 3, 4].ends_with(&[1, 2]), false);
     }
 }
