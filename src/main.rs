@@ -82,5 +82,8 @@ fn main() {
 
         let contain = "As a Service".contains(&"M");
         assert_eq!(contain, false);
+
+        assert_eq!([1, 2, 3, 4].starts_with(&[1, 2]), true);
+        assert_eq!([1, 2, 3, 4].starts_with(&[2, 3]), false);
     }
 }
