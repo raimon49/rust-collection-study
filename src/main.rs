@@ -88,5 +88,11 @@ fn main() {
 
         assert_eq!([1, 2, 3, 4].ends_with(&[3, 4]), true);
         assert_eq!([1, 2, 3, 4].ends_with(&[1, 2]), false);
+
+        use rand::{thread_rng, Rng};
+        let mut rng = thread_rng();
+        let x: u32 = rng.gen();
+        println!("{}", x);
+        println!("{:?}", rng.gen::<(f64, bool)>());
     }
 }
