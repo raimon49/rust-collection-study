@@ -94,5 +94,9 @@ fn main() {
         let x: u32 = rng.gen();
         println!("{}", x);
         println!("{:?}", rng.gen::<(f64, bool)>());
+
+        let mut my_vec = vec![1, 3, 5, 7, 9];
+        my_vec.retain(|&val| val <= 4); // 4以下の要素をすべて削除
+        println!("{:?}", my_vec);
     }
 }
