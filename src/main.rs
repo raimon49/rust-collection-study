@@ -106,5 +106,10 @@ fn main() {
 
         assert_eq!(heap.peek(), Some(&9)); // ヒープ最大値の参照
         assert_eq!(heap.pop(), Some(9));   // ヒープ最大値の取り出し
+
+        // 取り出す度にBinaryHeapでは最大値がコレクションの先頭になる
+        assert_eq!(heap.pop(), Some(8));
+        assert_eq!(heap.pop(), Some(6));
+        assert_eq!(heap.pop(), Some(5));
     }
 }
