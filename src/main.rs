@@ -99,4 +99,12 @@ fn main() {
         my_vec.retain(|&val| val <= 4); // 4以下の要素をすべて削除
         println!("{:?}", my_vec);
     }
+    {
+        use std::collections::BinaryHeap;
+
+        let mut heap = BinaryHeap::from(vec![2, 3, 8, 6, 9, 5, 4]);
+
+        assert_eq!(heap.peek(), Some(&9)); // ヒープ最大値の参照
+        assert_eq!(heap.pop(), Some(9));   // ヒープ最大値の取り出し
+    }
 }
