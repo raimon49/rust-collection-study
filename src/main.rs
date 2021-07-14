@@ -111,5 +111,10 @@ fn main() {
         assert_eq!(heap.pop(), Some(8));
         assert_eq!(heap.pop(), Some(6));
         assert_eq!(heap.pop(), Some(5));
+
+        // BinaryHeapは.iter()メソッドを持つためループ可能だが、必ずしも最大値順に取り出されることは保証されない
+        while let Some(num) = heap.pop() {
+            println!("BinaryHeap.pop() loop: {}", num);
+        }
     }
 }
