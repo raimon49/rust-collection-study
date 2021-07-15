@@ -117,4 +117,17 @@ fn main() {
             println!("BinaryHeap.pop() loop: {}", num);
         }
     }
+    {
+        use std::collections::HashMap;
+
+        struct Student {
+            name: String
+        }
+
+        let target_name = "taro".to_string();
+        let mut student_map = HashMap::new();
+        if !student_map.contains_key(&target_name) {
+            student_map.insert(target_name.clone(), Student{name: target_name});
+        }
+    }
 }
