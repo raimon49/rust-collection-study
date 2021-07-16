@@ -129,5 +129,8 @@ fn main() {
         if !student_map.contains_key(&target_name) {
             student_map.insert(target_name.clone(), Student{name: target_name});
         }
+
+        // "taro"は厳密にはStringではないが、StringがBorrow<&str>を実装してるためcontains_key()の引数にできる
+        assert!(student_map.contains_key("taro"));
     }
 }
