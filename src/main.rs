@@ -130,6 +130,10 @@ fn main() {
             student_map.insert(target_name.clone(), Student{name: target_name});
         }
 
+        // Entryの取り出しと無ければ挿入を1行で行う
+        let record = student_map.entry("taro".to_string()).or_insert(Student{name: "taro".to_string()});
+        assert_eq!(record.name, "taro");
+
         // "taro"は厳密にはStringではないが、StringがBorrow<&str>を実装してるためcontains_key()の引数にできる
         assert!(student_map.contains_key("taro"));
     }
