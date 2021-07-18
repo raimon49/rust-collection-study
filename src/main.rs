@@ -137,9 +137,10 @@ fn main() {
         // "taro"は厳密にはStringではないが、StringがBorrow<&str>を実装してるためcontains_key()の引数にできる
         assert!(student_map.contains_key("taro"));
 
+        // Setのset.get(&value)やset.take(&value)は、メモリ実体の方を見て結果を返す
         let s1 = "hello".to_string();
         let s2 = "hello".to_string();
-        println!("{:p}", &s1 as &str);
-        println!("{:p}", &s2 as &str);
+        println!("{:p}", &s1 as &str); // ex: 0x55afe6d98240
+        println!("{:p}", &s2 as &str); // ex: 0x55afe6d98060
     }
 }
