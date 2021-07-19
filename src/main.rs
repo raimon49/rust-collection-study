@@ -119,6 +119,7 @@ fn main() {
     }
     {
         use std::collections::HashMap;
+        use std::collections::HashSet;
 
         struct Student {
             name: String
@@ -142,5 +143,16 @@ fn main() {
         let s2 = "hello".to_string();
         println!("{:p}", &s1 as &str); // ex: 0x55afe6d98240
         println!("{:p}", &s2 as &str); // ex: 0x55afe6d98060
+
+        let mut name1 = HashSet::new();
+        let mut name2 = HashSet::new();
+        name1.insert("taro");
+        name1.insert("jiro");
+        name2.insert("taro");
+        name2.insert("saburo");
+        // 両方のSetに存在する要素だけに含まれるイテレータ
+        for n in name1.intersection(&name2) {
+            println!("{}", n);
+        }
     }
 }
