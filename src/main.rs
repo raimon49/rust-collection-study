@@ -154,5 +154,11 @@ fn main() {
         for n in name1.intersection(&name2) {
             println!("{}", n);
         }
+
+        // 以下のAND演算子でも両方に存在する要素を取り出せる
+        let cross_names = &name1 & &name2;
+        for n in cross_names {
+            println!("{}", n);
+        }
     }
 }
