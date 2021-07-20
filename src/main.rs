@@ -185,6 +185,7 @@ fn main() {
             }
         }
 
+        // ArtifactはEqとHashを実装しているためHashSetで管理できる
         let mut _collection = HashSet::<Artifact>::new();
     }
 }
