@@ -164,6 +164,7 @@ fn main() {
     {
         use std::hash::Hash;
         use std::hash::Hasher;
+        use std::collections::HashSet;
 
         struct Artifact {
             id: u64,
@@ -183,5 +184,7 @@ fn main() {
                 self.id.hash(hasher)
             }
         }
+
+        let mut _collection = HashSet::<Artifact>::new();
     }
 }
