@@ -161,4 +161,27 @@ fn main() {
             println!("{}", n);
         }
     }
+    {
+        use std::hash::Hash;
+        use std::hash::Hasher;
+
+        struct Artifact {
+            id: u64,
+            name: String
+        }
+
+        impl PartialEq for Artifact {
+            fn eq(&self, other: &Artifact) -> bool {
+                self.id == other.id
+            }
+        }
+
+        impl Eq for Artifact {}
+
+        impl Hash for Artifact {
+            fn hash<H: Hasher>(&self, hasher: &mut H) {
+                self.id.hash(hasher)
+            }
+        }
+    }
 }
