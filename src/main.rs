@@ -187,5 +187,24 @@ fn main() {
 
         // ArtifactはEqとHashを実装しているためHashSetで管理できる
         let mut _collection = HashSet::<Artifact>::new();
+
+        // 標準以外のハッシュアルゴリズム（BuildHasher）を実装したライブラリを使う
+        extern crate fnv;
+
+        use fnv::{FnvHashSet};
+        let mut name1 = FnvHashSet::default();
+        let mut name2 = FnvHashSet::default();
+        name1.insert("taro");
+        name1.insert("jiro");
+        name2.insert("taro");
+        name2.insert("saburo");
+        for n in name1.intersection(&name2) {
+            println!("{}", n);
+        }
+
+        let cross_names = &name1 & &name2;
+        for n in cross_names {
+            println!("{}", n);
+        }
     }
 }
